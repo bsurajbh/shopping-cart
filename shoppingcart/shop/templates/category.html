@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block metadescription %}
+{% if category %}
+{{category.description|truncatewords:155}}
+{% else %}
+Welcome to the store
+{% endif %}
+{% endblock %}
+
+{% block title %}
+{% if category %}
+{{category.name}} - Store
+{% else %}
+Welcome to the store
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if category %}
+<div class="">
+  <div class="">
+    <p>
+      <a href="{% url 'shop:all_products' %}"> Our product Collections
+      </a> | {{category.name}}
+    </p>
+  </div>
+</div>
+<div class="">
+  <img src="{{category.image.url}}" alt="{{category.name}}">
+</div>
+<br>
+<div class="">
+  <h1>{{category.name}}</h1>
+  <p>{{category.description}}</p>
+</div>
+{% endif %}
+
+<div class="">
+  <div class="">
+    {% for product in products %}
+    <div class="">
+      <div class="">
+        <a href="#">
+          <img src="{{product.image.url}}" alt="{{product.name}}">
+        </a>
+        <div class="">
+          <h4>{{product.name}}</h4>
+          <p>₹{{product.price}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{% endblock %}

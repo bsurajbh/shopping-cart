@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -17,6 +18,10 @@ class Category(models.Model):
     def __str__(self):
         """sring representation"""
         return self.name
+
+    def get_url(self):
+        """generate slug field urls"""
+        return reverse('shop:products_by_category', args=[self.slug])
 
 
 class Product(models.Model):
