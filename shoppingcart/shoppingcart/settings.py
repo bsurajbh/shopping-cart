@@ -25,7 +25,7 @@ SECRET_KEY = 'hm@g_-y&-65_ys-e*p=i78+r$$e-vsjj0t=#$0!93#&&msjafl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_seed',
-    'shop'
+    'shop',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -49,10 +50,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 ROOT_URLCONF = 'shoppingcart.urls'
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost',
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
