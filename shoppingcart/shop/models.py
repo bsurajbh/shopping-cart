@@ -46,3 +46,7 @@ class Product(models.Model):
     def __str__(self):
         """sring representation"""
         return self.name
+
+    def get_url(self):
+        """generate slug field url"""
+        return reverse('shop:products_category_detail', args=[self.category.slug, self.slug])

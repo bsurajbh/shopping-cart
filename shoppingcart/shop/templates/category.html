@@ -27,7 +27,7 @@ Welcome to the store
   </div>
 </div>
 <div class="">
-  <img src="{{category.image.url}}" alt="{{category.name}}">
+  <img style="height:100px;width:100px;" src="{{category.image.url}}" alt="{{category.name}}">
 </div>
 <br>
 <div class="">
@@ -41,8 +41,8 @@ Welcome to the store
     {% for product in products %}
     <div class="">
       <div class="">
-        <a href="#">
-          <img src="{{product.image.url}}" alt="{{product.name}}">
+        <a href="{{product.get_url}}">
+          <img style="height:100px;width:100px;" src=" {{product.image.url}}" alt="{{product.name}}">
         </a>
         <div class="">
           <h4>{{product.name}}</h4>
