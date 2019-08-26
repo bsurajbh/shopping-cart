@@ -25,8 +25,6 @@ def product_category_detail(request, c_slug, product_slug):
     """view product details"""
     try:
         product = Product.objects.get(category__slug=c_slug, slug=product_slug)
-        print(product)
-
     except Exception as e:
         raise e
     return render(request, 'product.html', {'product': product})
