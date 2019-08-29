@@ -36,11 +36,11 @@ Welcome to the store
 </div>
 {% endif %}
 
-<div class="">
+<div class="jumbotron">
   <div class="">
+    <div class="row">
     {% for product in products %}
-    <div class="">
-      <div class="">
+      <div class="col-md-3">
         <a href="{{product.get_url}}">
           <img style="height:100px;width:100px;" src=" {{product.image.url}}" alt="{{product.name}}">
         </a>
@@ -49,8 +49,8 @@ Welcome to the store
           <p>₹{{product.price}}</p>
         </div>
       </div>
-    </div>
     {% endfor%}
+  </div>
   </div>
 </div>
 {% endblock %}
