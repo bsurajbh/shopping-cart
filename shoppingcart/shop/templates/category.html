@@ -18,39 +18,39 @@ Welcome to the store
 
 {% block content %}
 {% if category %}
-<div class="">
-  <div class="">
+<div class="row row-class">
+  <div class="mx-auto">
     <p>
       <a href="{% url 'shop:all_products' %}"> Our product Collections
       </a> | {{category.name}}
     </p>
   </div>
 </div>
-<div class="">
-  <img style="height:500px;width:1110px;" src="{{category.image.url}}" alt="{{category.name}}">
+<div class="row mx-auto">
+  <img class="mx-image" !style="height:500px;width:1110px;" src="{{category.image.url}}" alt="{{category.name}}">
 </div>
 <br>
 <div class="">
-  <h1>{{category.name}}</h1>
-  <p>{{category.description}}</p>
+  <h1 class="text-center mx-title">{{category.name}}</h1>
+  <p class="description text-center">{{category.description}}</p>
 </div>
 {% endif %}
 
 <div class="jumbotron">
   <div class="">
     <div class="row">
-    {% for product in products %}
-      <div class="col-md-3">
+      {% for product in products %}
+      <div class="col-md-4">
         <a href="{{product.get_url}}">
-          <img style="height:100px;width:100px;" src=" {{product.image.url}}" alt="{{product.name}}">
+          <img class="img-responsive" style="width:100%;" src=" {{product.image.url}}" alt="{{product.name}}">
         </a>
         <div class="">
           <h4>{{product.name}}</h4>
           <p>₹{{product.price}}</p>
         </div>
       </div>
-    {% endfor%}
-  </div>
+      {% endfor%}
+    </div>
   </div>
 </div>
 {% endblock %}
