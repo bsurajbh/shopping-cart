@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHOP_TEMPLATES = os.path.join(BASE_DIR, 'shop/templates')
+SEARCH_TEMPLATES = os.path.join(BASE_DIR, 'search/templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django_seed',
     'shop',
     'debug_toolbar',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,7 @@ INTERNAL_IPS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [SHOP_TEMPLATES, ],
+        'DIRS': [SHOP_TEMPLATES, SEARCH_TEMPLATES, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

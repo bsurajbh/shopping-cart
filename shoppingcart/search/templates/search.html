@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
+look at the best toy u need
+{% endblock %}
+{% block title %}
+Search - Toy World
+{% endblock %}
+{% block content %}
+<div class="">
+  <p class="text-center search_text">
+    Your search result for :<b>" {{ query }}"</b>
+  </p>
+</div>
+<div class="jumbotron">
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+      <a href="{{product.get_url}}">
+        <div class="card" style="width:100%;">
+          <div class="text-center">
+            <img class="card-img-top img-responsive" style="height:250px" src=" {{product.image.url}}" alt="{{product.name}}">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{product.name}}</h4>
+            <p class="card-text">₹{{product.price}}</p>
+          </div>
+      </a>
+    </div>
+  </div>
+  {% empty %}
+  <p class="search_text"><span class="text-center"></span>0 results found</p>
+  {% endfor%}
+</div>
+</div>
+{% endblock %}
