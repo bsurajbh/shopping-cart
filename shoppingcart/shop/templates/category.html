@@ -35,12 +35,11 @@ Welcome to the store
   <p class="description text-center">{{category.description}}</p>
 </div>
 {% endif %}
-
 <div class="jumbotron">
   <div class="">
     <div class="row">
       {% for product in products %}
-      <div class="col-md-4">
+      <div class="col-md-4 product-card">
         <a href="{{product.get_url}}">
           <div class="card" style="width:100%;">
             <div class="text-center">
