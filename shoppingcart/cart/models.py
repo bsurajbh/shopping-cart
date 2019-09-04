@@ -9,7 +9,7 @@ class Cart(models.Model):
 
     class Meta:
         db_table = 'Cart'
-        ordering = ('date_added')
+        ordering = ('date_added',)
 
     def __str__(self):
         return self.cart_id
@@ -17,4 +17,14 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
     """storing cart items"""
-    product = models.ForeignKey(Product, on_delete=model.CASCADE)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    active = models.BooleanField(default=True)
+    quantity = models.IntegerField()
+
+    class Meta:
+        db_table = 'CartItem'
+
+    def product_total(self):
+        """calculating total product price"""
+        return self.product.price * self.quantity
