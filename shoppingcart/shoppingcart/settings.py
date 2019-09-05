@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHOP_TEMPLATES = os.path.join(BASE_DIR, 'shop/templates')
 SEARCH_TEMPLATES = os.path.join(BASE_DIR, 'search/templates')
+CART_TEMPLATES = os.path.join(BASE_DIR, 'search/templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -66,7 +67,7 @@ INTERNAL_IPS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [SHOP_TEMPLATES, SEARCH_TEMPLATES, ],
+        'DIRS': [SHOP_TEMPLATES, SEARCH_TEMPLATES, CART_TEMPLATES, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

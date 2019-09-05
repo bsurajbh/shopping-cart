@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block metadescription %}
+Verify the cart items and proceed to order
+{% endblock %}
+{% block title %}
+Cart - Store
+{% endblock %}
+{% block content %}
+{% if not cart_item %}
+<div class="">
+  <div class="text-center">
+    <br>
+    <h1 class="text">
+      Your cart is empty.
+    </h1>
+    <br>
+    <p class="text-center">
+      Please click <a href="{% url 'shop:all_products' %}">here</a> to continue shopping
+    </p>
+  </div>
+</div>
+{% else %}
+<div class="">
+  <div class="text-center">
+    <h1>Your shpping cart</h1>
+    <br>
+  </div>
+</div>
+<div class="row mx-auto">
+  <div class="col-md-12 col-sm-12 col-12 col-lg-6 text-center">
+    <table class="table my-table">
+      <thead class="table-thread">
+        <tr colspan="5">
+          <th>
+            Shoping items
+          </th>
+        </tr>
+      <tbody>
+
+      </tbody>
+      </thead>
+    </table>
+  </div>
+
+</div>
+{% endif %}
+
+{% endblock %}
