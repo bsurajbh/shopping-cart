@@ -29,5 +29,11 @@
   padding:10px;
 }
 .my-table{
-min-width: 200px
+  min-width: 200px;
+}
+.custom-link{
+  text-decoration: none;
+}
+.custom-fa{
+  text-decoration: none;
 }

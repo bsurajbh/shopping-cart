@@ -1,5 +1,5 @@
-from django.shortcuts import render.redirect
-from . models import cart, CartItem
+from django.shortcuts import render, redirect
+from . models import Cart, CartItem
 from shop.models import Product
 
 
@@ -33,7 +33,7 @@ def add_cart(request, product_id):
             product=product, quantity=1, cart=cart
         )
         cart_item.save()
-        return redirect('cart:cart-detail')
+    return redirect('cart:cart_details')
 
 
 def cart_details(request, total=0, counter=0, cart_items=None):
@@ -41,8 +41,8 @@ def cart_details(request, total=0, counter=0, cart_items=None):
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
         cart_items = CartItem.objects.filter(cart=cart, active=True)
-        for items in cart_items:
-            total += (items.product.price * item.quantity)
+        for item in cart_items:
+            total += item.product.price * item.quantity
             counter += item.quantity
     except ObjectDoesNotExist:
         pass
