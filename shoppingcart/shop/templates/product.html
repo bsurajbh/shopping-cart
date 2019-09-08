@@ -33,7 +33,9 @@
         <b>Out of Stock</b>
       </p>
       {% else %}
-      <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+      <p class="text-center">
+        <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+      </p>
       {% endif %}
     </div>
   </div>
