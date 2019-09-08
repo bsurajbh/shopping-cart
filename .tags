@@ -100,13 +100,6 @@ meta	/var/www/html/shopping-cart/shoppingcart/shop/templates/base.html	/^  <meta
 title	/var/www/html/shopping-cart/shoppingcart/shop/templates/base.html	/^  <title>{% block title %} {% endblock %}<\/title>$/;"	function	line:8
 div	/var/www/html/shopping-cart/shoppingcart/shop/templates/base.html	/^<div class="">$/;"	function	line:10
 body	/var/www/html/shopping-cart/shoppingcart/shop/templates/base.html	/^<body>$/;"	function	line:18
-nav	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^<nav>$/;"	function	line:1
-ul	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^  <ul>$/;"	function	line:2
-li	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <li>$/;"	function	line:3
-a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <a href="#">All products<\/a>$/;"	function	line:4
-li	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <li>$/;"	function	line:7
-a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <a href="{{cat.get_url}}">{{cat.name}}<\/a>$/;"	function	line:8
-li	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <li>$/;"	function	line:11
 div	/var/www/html/shopping-cart/shoppingcart/shop/templates/footer.html	/^<div class="">$/;"	function	line:1
 p	/var/www/html/shopping-cart/shoppingcart/shop/templates/footer.html	/^  <p>&copy; Your site<\/p>$/;"	function	line:2
 div	/var/www/html/shopping-cart/shoppingcart/shop/templates/category.html	/^<div class="">$/;"	function	line:21
@@ -14850,3 +14843,71 @@ hasScroll	/var/www/html/shopping-cart/shopenv/lib/python3.6/site-packages/django
 escapeMarkup	/var/www/html/shopping-cart/shopenv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/select2/select2.full.js	/^  Utils.escapeMarkup = function (markup) {$/;"	function	line:719
 appendMany	/var/www/html/shopping-cart/shopenv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/select2/select2.full.js	/^  Utils.appendMany = function ($element, $nodes) {$/;"	function	line:741
 Results	/var/www/html/shopping-cart/sh
+nav	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">$/;"	function	line:1
+a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^  <a class="navbar-brand  {% if 'shop' in request.path %}active{% endif %}" href="{% url 'shop:all_products' %}">Shop<\/a>$/;"	function	line:2
+button	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">$/;"	function	line:3
+span	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <span class="navbar-toggler-icon"><\/span>$/;"	function	line:4
+div	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^  <div class="collapse navbar-collapse" id="navbarSupportedContent">$/;"	function	line:7
+ul	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <ul class="navbar-nav mr-auto">$/;"	function	line:8
+li	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <li class="nav-item dropdown">$/;"	function	line:9
+a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">$/;"	function	line:10
+div	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^        <div class="dropdown-menu" aria-labelledby="navbarDropdown">$/;"	function	line:13
+a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^          <a class="dropdown-item" href="{{cat.get_url}}">{{cat.name|title}}<\/a>$/;"	function	line:15
+li	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <li class="nav-item active">$/;"	function	line:19
+a	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^        <a class="nav-link" href="{% url 'cart:cart_details' %}"><i class="fa fa-shopping-cart" aria-hidden="true"><\/i>( )<\/a>$/;"	function	line:20
+form	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^    <form method='get' class="form-inline my-2 my-lg-0" action="{% url 'search:search' %}">$/;"	function	line:23
+input	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='q'>$/;"	function	line:24
+button	/var/www/html/shopping-cart/shoppingcart/shop/templates/navbar.html	/^      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"><\/i>$/;"	function	line:25
+_cart_id	/var/www/html/shopping-cart/shoppingcart/cart/views.py	/^def _cart_id(request):$/;"	function	line:7
+add_cart	/var/www/html/shopping-cart/shoppingcart/cart/views.py	/^def add_cart(request, product_id):$/;"	function	line:15
+cart_details	/var/www/html/shopping-cart/shoppingcart/cart/views.py	/^def cart_details(request, total=0, counter=0, cart_items=None):$/;"	function	line:41
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^<div class="">$/;"	function	line:10
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^  <div class="text-center">$/;"	function	line:11
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <br>$/;"	function	line:12
+h	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <h1 class="text">$/;"	function	line:13
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <br>$/;"	function	line:16
+p	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <p class="text-center">$/;"	function	line:17
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^<div class="">$/;"	function	line:23
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^  <div class="text-center">$/;"	function	line:24
+h	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <h1>Your shopping cart<\/h1>$/;"	function	line:25
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <br>$/;"	function	line:26
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^<div class="row mx-auto">$/;"	function	line:29
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^  <div class="col-md-12 col-sm-12 col-12 col-lg-6 text-center">$/;"	function	line:30
+table	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <table class="table my-table">$/;"	function	line:31
+thead	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^      <thead class="table-head">$/;"	function	line:32
+tr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^        <tr>$/;"	function	line:33
+th	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <th colspan="5">$/;"	function	line:34
+tbody	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^      <tbody>$/;"	function	line:38
+tr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^        <tr>$/;"	function	line:40
+td	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <td>$/;"	function	line:41
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <a href="{{item.product.get_absolute_url}}">$/;"	function	line:42
+td	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <td class="text-left">$/;"	function	line:47
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <br>$/;"	function	line:49
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <br>$/;"	function	line:51
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <br>$/;"	function	line:53
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <br>$/;"	function	line:55
+hr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <hr>$/;"	function	line:56
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^            <div class="text-center">$/;"	function	line:57
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^              <a href="{% url 'cart:add_cart' item.product.id %}" class="custom-link">$/;"	function	line:59
+i	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^                <i class="fas fa-plus-circle custom-fa"><\/i>$/;"	function	line:60
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^              <a href="#" class="custom-link">$/;"	function	line:63
+i	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^                <i class="fas fa-minus-circle custom-fa"><\/i>$/;"	function	line:64
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^              <a href="#" class="custom-link">$/;"	function	line:67
+i	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^                <i class="fas fa-trash-alt custom-fa"><\/i>$/;"	function	line:68
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^              <a href="#" class="custom-link">$/;"	function	line:71
+i	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^                <i class="fas fa-minus-circle custom-fa"><\/i>$/;"	function	line:72
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^              <a href="#" class="custom-link">$/;"	function	line:75
+i	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^                <i class="fas fa-trash-alt custom-fa"><\/i>$/;"	function	line:76
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^  <div class="col-md-12 col-sm-12 col-12 col-lg-6 text-center">$/;"	function	line:87
+table	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <table class="table my-table">$/;"	function	line:88
+thead	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^      <thead class="table-head">$/;"	function	line:89
+tr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^        <tr>$/;"	function	line:90
+th	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <th>$/;"	function	line:91
+tbody	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^      <tbody>$/;"	function	line:96
+tr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^        <tr>$/;"	function	line:97
+td	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <td>$/;"	function	line:98
+tr	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^        <tr>$/;"	function	line:102
+td	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^          <td>$/;"	function	line:103
+div	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^    <div class="mx-auto">$/;"	function	line:109
+a	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^      <a href="{% url 'shop:all_products' %}" class="btn btn-secondary btn-block"> Continue Shopping <\/a>$/;"	function	line:110
+br	/var/www/html/shopping-cart/shoppingcart/cart/templates/cart.html	/^<br>$/;"	function	line:114

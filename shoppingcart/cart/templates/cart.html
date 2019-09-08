@@ -22,7 +22,7 @@ Cart - Store
 {% else %}
 <div class="">
   <div class="text-center">
-    <h1>Your shpping cart</h1>
+    <h1>Your shopping cart</h1>
     <br>
   </div>
 </div>
@@ -30,8 +30,8 @@ Cart - Store
   <div class="col-md-12 col-sm-12 col-12 col-lg-6 text-center">
     <table class="table my-table">
       <thead class="table-head">
-        <tr colspan="5">
-          <th>
+        <tr>
+          <th colspan="5">
             Shopping items
           </th>
         </tr>
@@ -39,41 +39,44 @@ Cart - Store
         {% for item in cart_items %}
         <tr>
           <td>
-            <a href="item.product.get_absolute_url">
+            <a href="{{item.product.get_absolute_url}}">
               <img src="{{item.product.image.url}}" alt="" class="
                cart-image">
             </a>
           </td>
-          <td class="text-lef">
+          <td class="text-left">
             {{item.product.name}}
             <br>
             SKU: {{item.product.id}}
             <br>
             Unit Price: {{item.product.price}}
+            <br>
             Quantity: {{item.quantity}} x {{item.product.price}}
-          </td>
-          <td>
-            {% if item.quantity < item.product.quantity %}
-            <a href="{% url 'cart:add_cart' item.product.id %}" class="custom-link">
-              <i class="fas fa-plus-circle custom-fa"></i>
-            </a>
-            &nbsp;
-            <a href="#" class="custom-link">
-              <i class="fas fa-minus-circle custom-fa"></i>
-            </a>
-            &nbsp;
-            <a href="#" class="custom-link">
-              <i class="fas fa-trash-alt custom-fa"></i>
-            </a>
-            {% else %}
-            <a href="#" class="custom-link">
-              <i class="fas fa-minus-circle custom-fa"></i>
-            </a>
-            &nbsp;
-            <a href="#" class="custom-link">
-              <i class="fas fa-trash-alt custom-fa"></i>
-            </a>
-            {% endif %}
+            <br>
+            <hr>
+            <div class="text-center">
+              {% if item.quantity < item.product.stock %}
+              <a href="{% url 'cart:add_cart' item.product.id %}" class="custom-link">
+                <i class="fas fa-plus-circle custom-fa"></i>
+              </a>
+              &nbsp;
+              <a href="#" class="custom-link">
+                <i class="fas fa-minus-circle custom-fa"></i>
+              </a>
+              &nbsp;
+              <a href="#" class="custom-link">
+                <i class="fas fa-trash-alt custom-fa"></i>
+              </a>
+              {% else %}
+              <a href="#" class="custom-link">
+                <i class="fas fa-minus-circle custom-fa"></i>
+              </a>
+              &nbsp;
+              <a href="#" class="custom-link">
+                <i class="fas fa-trash-alt custom-fa"></i>
+              </a>
+              {% endif %}
+            </div>
           </td>
         </tr>
         {% endfor %}
@@ -110,5 +113,4 @@ Cart - Store
 </div>
 <br>
 {% endif %}
-
 {% endblock %}
