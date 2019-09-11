@@ -39,7 +39,7 @@ Cart - Store
         {% for item in cart_items %}
         <tr>
           <td>
-            <a href="{{item.product.get_absolute_url}}">
+            <a href="{{item.product.get_url}}">
               <img src="{{item.product.image.url}}" alt="" class="
                cart-image">
             </a>
@@ -60,19 +60,19 @@ Cart - Store
                 <i class="fas fa-plus-circle custom-fa"></i>
               </a>
               &nbsp;
-              <a href="#" class="custom-link">
+              <a href="{% url 'cart:remove_cart_item' item.product_id %}" class="custom-link">
                 <i class="fas fa-minus-circle custom-fa"></i>
               </a>
               &nbsp;
-              <a href="#" class="custom-link">
+              <a href="{% url 'cart:delete_cart' item.product_id %}" class="custom-link">
                 <i class="fas fa-trash-alt custom-fa"></i>
               </a>
               {% else %}
-              <a href="#" class="custom-link">
+              <a href="{% url 'cart:remove_cart_item' item.product_id %}" class="custom-link">
                 <i class="fas fa-minus-circle custom-fa"></i>
               </a>
               &nbsp;
-              <a href="#" class="custom-link">
+              <a href="{% url 'cart:delete_cart' item.product_id %}" class="custom-link">
                 <i class="fas fa-trash-alt custom-fa"></i>
               </a>
               {% endif %}
