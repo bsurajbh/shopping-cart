@@ -7,7 +7,6 @@ def Search(request):
     """search site functionality"""
     products = None
     query = None
-    print(request.GET)
     if 'q' in request.GET:
         query = request.GET.get('q')
         products = Product.objects.all().filter(
