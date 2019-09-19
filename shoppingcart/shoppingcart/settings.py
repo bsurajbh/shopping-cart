@@ -27,7 +27,7 @@ SECRET_KEY = 'hm@g_-y&-65_ys-e*p=i78+r$$e-vsjj0t=#$0!93#&&msjafl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['192.168.0.113']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'search',
     'cart',
+    'order',
 ]
 
 MIDDLEWARE = [

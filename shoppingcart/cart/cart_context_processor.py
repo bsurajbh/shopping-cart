@@ -11,9 +11,9 @@ def cart_item_counter(request):
     else:
         try:
             cart = Cart.objects.get(cart_id=_cart_id(request))
+            if cart:
+                count = CartItem.objects.filter(cart=cart).aggregate(
+                    Sum('quantity'))['quantity__sum']
         except Cart.DoesNotExist:
-            pass
-        if cart:
-            count = CartItem.objects.filter(cart=cart).aggregate(
-                Sum('quantity'))['quantity__sum']
+            cart = 0
     return dict(cart_item_count=count if count is not None else 0)
