@@ -1,0 +1,24 @@
+sudo apt-get update
+
+sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3
+
+sudo vim /etc/apache2/sites-available/shopproject.conf
+
+sudo a2ensite shopproject.conf
+
+service apache2 reload
+
+sudo vim /etc/hosts
+        127.0.0.1 shopproject.localhost
+
+
+sudo ufw allow 'Apache Full'
+
+sudo apache2ctl configtest
+
+sudo vim settings.py
+        ALLOWED_HOSTS = ['shopproject.localhost']
+
+sudo service apache2 restart
+
+tail -f /var/log/apache2/error.log

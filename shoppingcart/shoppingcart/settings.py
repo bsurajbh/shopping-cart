@@ -27,7 +27,7 @@ SECRET_KEY = 'hm@g_-y&-65_ys-e*p=i78+r$$e-vsjj0t=#$0!93#&&msjafl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.113']
+ALLOWED_HOSTS = ['localhost', 'shopproject.localhost']
 
 
 # Application definition
@@ -135,9 +135,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 MEDIA_URL = '/media/'
